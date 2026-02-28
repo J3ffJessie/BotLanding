@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[BOT NAME] — Discord Bot</title>
+  <title>Torc Bot — Discord Bot</title>
   <meta name="description" content="[BOT TAGLINE] — Add [BOT NAME] to your Discord server today." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,8 +17,8 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="assets/bot-avatar.svg" alt="[BOT NAME] Avatar" class="nav-avatar" />
-        <span class="nav-name">[BOT NAME]</span>
+        <img src="assets/TorcBot Logo.png" alt="Torc Bot Avatar" class="nav-avatar" />
+        <span class="nav-name">Torc Bot</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Open menu">
         <i class="fas fa-bars"></i>
@@ -39,18 +39,18 @@
     <div class="hero-glow"></div>
     <div class="container hero-content">
       <div class="hero-avatar-wrap">
-        <img src="assets/bot-avatar.svg" alt="[BOT NAME]" class="hero-avatar" />
+        <img src="assets/TorcBot Logo.png" alt="Torc Bot" class="hero-avatar" />
         <span class="online-badge" title="Bot is online"></span>
       </div>
 
       <div class="hero-badges">
-        <span class="badge"><i class="fas fa-shield-halved"></i> Verified Bot</span>
+        <span class="badge"><i class="fas fa-shield-halved"></i> Self-Verified Bot</span>
         <span class="badge"><i class="fas fa-bolt"></i> Always Online</span>
-        <span class="badge"><i class="fas fa-server"></i> [X,XXX]+ Servers</span>
+        <span class="badge"><i class="fas fa-server"></i> Single Server</span>
       </div>
 
-      <h1 class="hero-title">[BOT NAME]</h1>
-      <p class="hero-tagline">[Your bot's tagline — e.g. "The all-in-one moderation & utility bot for serious communities."]</p>
+      <h1 class="hero-title">Torc Bot</h1>
+      <p class="hero-tagline">Your friendly assistant within your community. Making catch up easy and accessibility first priority</p>
 
       <div class="hero-cta">
         <a href="YOUR_INVITE_LINK_HERE" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
@@ -72,15 +72,15 @@
   <div class="stats-strip">
     <div class="container stats-grid">
       <div class="stat">
-        <span class="stat-number" data-target="5000">0</span><span class="stat-number">+</span>
+        <span class="stat-number" data-target="1">0</span><span class="stat-number">+</span>
         <span class="stat-label">Servers</span>
       </div>
       <div class="stat">
-        <span class="stat-number" data-target="50000">0</span><span class="stat-number">+</span>
+        <span class="stat-number" data-target="3000">0</span><span class="stat-number">+</span>
         <span class="stat-label">Users Reached</span>
       </div>
       <div class="stat">
-        <span class="stat-number" data-target="30">0</span><span class="stat-number">+</span>
+        <span class="stat-number" data-target="13">0</span><span class="stat-number">+</span>
         <span class="stat-label">Commands</span>
       </div>
       <div class="stat">
@@ -96,7 +96,7 @@
       <div class="section-header">
         <span class="section-tag">What it does</span>
         <h2 class="section-title">Everything your server needs</h2>
-        <p class="section-sub">Replace a dozen bots with one. [BOT NAME] packs powerful features into a single, reliable package.</p>
+        <p class="section-sub">Makes community feel easy. Catch up on conversations after being out, participate in live streams in your preferred language and network without the awkwardness.</p>
       </div>
 
       <div class="features-grid">
@@ -106,12 +106,12 @@
           <div class="feature-icon" style="--icon-color: #5865F2;">
             <i class="fas fa-gavel"></i>
           </div>
-          <h3>[Feature Category 1]</h3>
-          <p>[Describe what this feature group does. E.g. "Full moderation suite — ban, kick, mute, warn, and automated action logging for every action taken by mods."]</p>
+          <h3>Server Summarization</h3>
+          <p>Summarizes recent messages across all text channels using Groq AI</p>
           <ul class="feature-list">
-            <li><i class="fas fa-check"></i> [Feature bullet 1]</li>
-            <li><i class="fas fa-check"></i> [Feature bullet 2]</li>
-            <li><i class="fas fa-check"></i> [Feature bullet 3]</li>
+            <li><i class="fas fa-check"></i> Gathers last 100 messages from all text channels</li>
+            <li><i class="fas fa-check"></i> Utilizing Groq AI, generates a summary of the conversation</li>
+            <li><i class="fas fa-check"></i> Built as a /slash command that can summarize the current specific channel summoned in, or as a CRON scheduled task to run weekly. Great for the summary of the previous week.</li>
           </ul>
         </div>
 
@@ -120,45 +120,43 @@
           <div class="feature-icon" style="--icon-color: #57F287;">
             <i class="fas fa-chart-bar"></i>
           </div>
-          <h3>[Feature Category 2]</h3>
-          <p>[Describe what this feature group does. E.g. "Detailed server analytics — track member growth, message activity, and command usage over time."]</p>
+          <h3>Reminders</h3>
+          <p>Lets user set up reminders within your discord server and be pinged when that time comes. Using natural language set reminders.</p>
           <ul class="feature-list">
-            <li><i class="fas fa-check"></i> [Feature bullet 1]</li>
-            <li><i class="fas fa-check"></i> [Feature bullet 2]</li>
-            <li><i class="fas fa-check"></i> [Feature bullet 3]</li>
+            <li><i class="fas fa-check"></i>Simple to use</li>
+            <li><i class="fas fa-check"></i>Reminders go to users DM's so it doesn't clog up channel conversations</li>
+            <li><i class="fas fa-check"></i>Reminders are stored in JSON and can be deleted by the user at any time.</li>
           </ul>
         </div>
 
         <!-- ── Feature 3 ── -->
-        <div class="feature-card">
+        <!-- <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #FEE75C;">
             <i class="fas fa-star"></i>
           </div>
-          <h3>[Feature Category 3]</h3>
-          <p>[Describe what this feature group does. E.g. "XP-based leveling system with custom rank cards, role rewards, and leaderboard commands."]</p>
+          <h3>Luma Event Listing</h3>
+          <p>Have community events listed in Luma, well this command allows you to connect to your Luma calendar and get a summary of the upcoming events directly in Discord.</p>
           <ul class="feature-list">
-            <li><i class="fas fa-check"></i> [Feature bullet 1]</li>
-            <li><i class="fas fa-check"></i> [Feature bullet 2]</li>
-            <li><i class="fas fa-check"></i> [Feature bullet 3]</li>
+            <li><i class="fas fa-check"></i> Get a card like layout of your Luma events directly in your Discord DM's.</li>
           </ul>
-        </div>
+        </div> -->
 
         <!-- ── Feature 4 ── -->
         <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #ED4245;">
             <i class="fas fa-robot"></i>
           </div>
-          <h3>[Feature Category 4]</h3>
-          <p>[Describe what this feature group does. E.g. "Smart auto-moderation — filter spam, bad words, invite links, and suspicious patterns automatically."]</p>
+          <h3>Live voice translation</h3>
+          <p>Live voice translation of Audio channels in Discord with web based captions outside of Discord utilizing Groq AI.</p>
           <ul class="feature-list">
-            <li><i class="fas fa-check"></i> [Feature bullet 1]</li>
-            <li><i class="fas fa-check"></i> [Feature bullet 2]</li>
-            <li><i class="fas fa-check"></i> [Feature bullet 3]</li>
+            <li><i class="fas fa-check"></i> Multi-language support for each individual user to choose their preferred language.</li>
+            <li><i class="fas fa-check"></i> Near live translation services for members to participate in events where they may not speak the language.</li>
+            <li><i class="fas fa-check"></i> Shows who is speaking, what was originally spoken and what it translated to in the chosen language.</li>
           </ul>
         </div>
 
         <!-- ── Feature 5 ── -->
-        <div class="feature-card">
+        <!-- <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #EB459E;">
             <i class="fas fa-bell"></i>
           </div>
@@ -169,10 +167,10 @@
             <li><i class="fas fa-check"></i> [Feature bullet 2]</li>
             <li><i class="fas fa-check"></i> [Feature bullet 3]</li>
           </ul>
-        </div>
+        </div> -->
 
         <!-- ── Feature 6 ── -->
-        <div class="feature-card">
+        <!-- <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #5DADE2;">
             <i class="fas fa-sliders"></i>
           </div>
@@ -183,7 +181,7 @@
             <li><i class="fas fa-check"></i> [Feature bullet 2]</li>
             <li><i class="fas fa-check"></i> [Feature bullet 3]</li>
           </ul>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -203,8 +201,8 @@
         <button class="cmd-filter-btn active" data-category="all">All</button>
         <button class="cmd-filter-btn" data-category="moderation">Moderation</button>
         <button class="cmd-filter-btn" data-category="utility">Utility</button>
-        <button class="cmd-filter-btn" data-category="fun">Fun</button>
-        <button class="cmd-filter-btn" data-category="config">Config</button>
+        <!-- <button class="cmd-filter-btn" data-category="fun">Fun</button> -->
+        <button class="cmd-filter-btn" data-category="config">Config (N/A)</button>
       </div>
 
       <div class="commands-grid" id="commandsGrid">
@@ -212,96 +210,114 @@
         <!-- Moderation -->
         <div class="cmd-card" data-category="moderation">
           <div class="cmd-header">
-            <code class="cmd-name">/ban</code>
+            <code class="cmd-name">/location</code>
             <span class="cmd-tag tag-mod">Moderation</span>
           </div>
-          <p class="cmd-desc">[Description of what /ban does. E.g. "Ban a member from the server, optionally deleting their messages and specifying a reason."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/ban @user [reason] [delete_messages]</code></div>
+          <p class="cmd-desc">(Admin only) Scans recent messages from an intro channel for location mentions and logs them to locations.log</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/location [option:] limit a number of messages to scan in the channel (max of 100)</code></div>
         </div>
 
         <div class="cmd-card" data-category="moderation">
           <div class="cmd-header">
-            <code class="cmd-name">/kick</code>
+            <code class="cmd-name">/downloadlocations</code>
             <span class="cmd-tag tag-mod">Moderation</span>
           </div>
-          <p class="cmd-desc">[Description. E.g. "Kick a member from the server with an optional reason logged to the mod log."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/kick @user [reason]</code></div>
+          <p class="cmd-desc">(Admin only) Exports the locations log as a JSON file and DMs it to you for tracking statistics of where you membership is highest.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/downloadlocations</code></div>
         </div>
 
         <div class="cmd-card" data-category="moderation">
           <div class="cmd-header">
-            <code class="cmd-name">/warn</code>
+            <code class="cmd-name">/coffee-list</code>
             <span class="cmd-tag tag-mod">Moderation</span>
           </div>
-          <p class="cmd-desc">[Description. E.g. "Issue a formal warning to a member that is logged and visible in their infraction history."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/warn @user [reason]</code></div>
+          <p class="cmd-desc">(Admin Only) Lists all members currently assigned the `COFFEE_ROLE_NAME` role. Useful for verifying who is eligible for pairing.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/coffee-list</code></div>
         </div>
 
-        <div class="cmd-card" data-category="moderation">
+        <div class="cmd-card" data-category="utilty">
           <div class="cmd-header">
-            <code class="cmd-name">/timeout</code>
-            <span class="cmd-tag tag-mod">Moderation</span>
+            <code class="cmd-name">/server</code>
+            <span class="cmd-tag tag-util">Utility</span>
           </div>
-          <p class="cmd-desc">[Description. E.g. "Temporarily timeout a member for a specified duration, preventing them from sending messages."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/timeout @user [duration] [reason]</code></div>
+          <p class="cmd-desc">(Admin Only) (CRON) Gathers recent 100 messages from all visible text channels and posts an AI-generated summary to the configured `TARGET_CHANNEL_ID`</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/server</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="utility">
+          <div class="cmd-header">
+            <code class="cmd-name">/summarize</code>
+            <span class="cmd-tag tag-util">Utility</span>
+          </div>
+          <p class="cmd-desc">Summarizes the last 100 messages in the current channel and DMs the result to the user who entered the command.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/summarize</code></div>
         </div>
 
         <!-- Utility -->
         <div class="cmd-card" data-category="utility">
           <div class="cmd-header">
-            <code class="cmd-name">/userinfo</code>
+            <code class="cmd-name">/coffe-pair</code>
             <span class="cmd-tag tag-util">Utility</span>
           </div>
-          <p class="cmd-desc">[Description. E.g. "Display detailed information about a user — account age, join date, roles, and infraction count."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/userinfo [@user]</code></div>
+          <p class="cmd-desc">(Admin Only) (CRON: Scheduled every other Monday morning) Randomly pairs members who have the `COFFEE_ROLE_NAME` and DMs each person their partner's name. Respects the cooldown period so the same pair isn't repeated too soon.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/coffee-pair</code></div>
         </div>
 
         <div class="cmd-card" data-category="utility">
           <div class="cmd-header">
-            <code class="cmd-name">/serverinfo</code>
+            <code class="cmd-name">/remindme</code>
             <span class="cmd-tag tag-util">Utility</span>
           </div>
-          <p class="cmd-desc">[Description. E.g. "Show server statistics including member count, creation date, boost level, and channel breakdown."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/serverinfo</code></div>
+          <p class="cmd-desc">Set a personal reminder delivered to your DMs</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/remindme [time] how long from now (e.g. '2 hours', '3 days') [message] What to remind you about.</code></div>
         </div>
 
         <div class="cmd-card" data-category="utility">
           <div class="cmd-header">
-            <code class="cmd-name">/avatar</code>
+            <code class="cmd-name">/listreminders</code>
             <span class="cmd-tag tag-util">Utility</span>
           </div>
-          <p class="cmd-desc">[Description. E.g. "Fetch and display a user's full-resolution avatar with a direct download link."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/avatar [@user]</code></div>
+          <p class="cmd-desc">List all of your active reminders with their IDs and time remaining</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/listreminders</code></div>
         </div>
+
+        <div class="cmd-card" data-category="utility">
+          <div class="cmd-header">
+            <code class="cmd-name">/cancelreminder</code>
+            <span class="cmd-tag tag-util">Utility</span>
+          </div>
+          <p class="cmd-desc">Cancel a reminder by ID, or cancel all of your reminders at once.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/cancelreminder [id] Reminder ID from /listreminders, or [all] to cancel all reminders.</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="utility">
+  <div class="cmd-header">
+    <code class="cmd-name">/translate</code>
+    <span class="cmd-tag tag-util">Utility</span>
+  </div>
+  <p class="cmd-desc">Start or stop live voice translation in your current voice channel. Captures audio, transcribes speech via Whisper, and streams live captions to a shareable URL that is auto populated upon /translate start. Sessions auto-expire after 1 hour.</p>
+  <div class="cmd-usage"><span>Usage:</span> <code>/translate [start] Join a voice channel and begin live captioning, or [stop] End the active translation session.</code></div>
+</div>
 
         <!-- Fun -->
         <div class="cmd-card" data-category="fun">
           <div class="cmd-header">
-            <code class="cmd-name">/poll</code>
+            <code class="cmd-name">/events</code>
             <span class="cmd-tag tag-fun">Fun</span>
           </div>
-          <p class="cmd-desc">[Description. E.g. "Create a reaction-based or button poll with up to 10 options and an optional timer."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/poll [question] [options...]</code></div>
-        </div>
-
-        <div class="cmd-card" data-category="fun">
-          <div class="cmd-header">
-            <code class="cmd-name">/8ball</code>
-            <span class="cmd-tag tag-fun">Fun</span>
-          </div>
-          <p class="cmd-desc">[Description. E.g. "Ask the magic 8ball a yes/no question and receive a cryptic answer."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/8ball [question]</code></div>
+          <p class="cmd-desc">Fetches and DMs you the next 7 days of scheduled Luma server events (up to 10)</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/events</code></div>
         </div>
 
         <!-- Config -->
         <div class="cmd-card" data-category="config">
-          <div class="cmd-header">
-            <code class="cmd-name">/setup</code>
-            <span class="cmd-tag tag-cfg">Config</span>
-          </div>
-          <p class="cmd-desc">[Description. E.g. "Launch the interactive setup wizard to configure the bot's channels, roles, and modules."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/setup</code></div>
-        </div>
+  <div class="cmd-header">
+    <code class="cmd-name">/setup</code>
+    <span class="cmd-tag tag-cfg">Config</span>
+  </div>
+  <p class="cmd-desc">(Admin only) Configure bot settings for this server. Manage automated weekly summaries, set the channel they post to, and toggle coffee pairing on or off.</p>
+  <div class="cmd-usage"><span>Usage:</span> <code>/setup [view] See current config, [summary #channel] Enable weekly summaries in a channel, [summary-disable] Turn off summaries, or [coffee true|false] Toggle coffee pairing.</code></div>
+</div>
 
         <div class="cmd-card" data-category="config">
           <div class="cmd-header">
@@ -332,7 +348,7 @@
           <div class="step-body">
             <h3>Invite the Bot</h3>
             <p>Click the <strong>Add to Discord</strong> button and choose the server you want to add <strong>[BOT NAME]</strong> to. You'll need the <em>Manage Server</em> permission.</p>
-            <a href="YOUR_INVITE_LINK_HERE" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+            <a class="btn btn-primary btn-sm" target="_blank" rel="noopener">
               <i class="fab fa-discord"></i> Add to Discord
             </a>
           </div>
@@ -346,11 +362,16 @@
             <h3>Grant Permissions</h3>
             <p>Discord will show a permissions screen. [BOT NAME] needs the following permissions to function correctly:</p>
             <ul class="perm-list">
-              <li><i class="fas fa-check-circle"></i> <strong>Manage Messages</strong> — to delete messages during moderation</li>
-              <li><i class="fas fa-check-circle"></i> <strong>Manage Roles</strong> — to assign/remove roles</li>
-              <li><i class="fas fa-check-circle"></i> <strong>Kick & Ban Members</strong> — for moderation commands</li>
-              <li><i class="fas fa-check-circle"></i> <strong>Send Messages / Embed Links</strong> — to respond with rich embeds</li>
-              <li><i class="fas fa-check-circle"></i> <strong>[Any other required permission]</strong> — [reason]</li>
+              <li><i class="fas fa-check-circle"></i> <strong>View Channels</strong> — to read and access server channels</li>
+              <li><i class="fas fa-check-circle"></i> <strong>Read Message History</strong> — to fetch messages for summarization and location scanning</li>
+              <li><i class="fas fa-check-circle"></i> <strong>Send Messages &amp; Embed Links</strong> — to reply with rich embeds</li>
+              <li><i class="fas fa-check-circle"></i> <strong>Send Messages in Threads</strong> — to post responses inside threads</li>
+              <li><i class="fas fa-check-circle"></i> <strong>Attach Files</strong> — to send the locations export via DM</li>
+              <li><i class="fas fa-check-circle"></i> <strong>Connect (Voice)</strong> — to join voice channels for live translation</li>
+              <li><i class="fas fa-check-circle"></i> <strong>Use Voice Activity</strong> — to capture audio from voice channel members</li>
+              <li><i class="fas fa-check-circle"></i> <strong>Read Guild Members</strong> — privileged intent required for coffee pairing role lookups</li>
+              <li><i class="fas fa-check-circle"></i> <strong>Message Content</strong> — privileged intent required to read message text for summarization</li>
+
             </ul>
           </div>
         </div>
@@ -358,39 +379,48 @@
         <div class="step-connector"></div>
 
         <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-body">
-            <h3>Run the Setup Wizard</h3>
-            <p>Once the bot is in your server, type the following command in any channel where the bot has access. This launches an interactive wizard that walks you through configuration.</p>
-            <div class="code-block">
-              <span class="code-label">In any Discord channel</span>
-              <pre><code>/setup</code></pre>
-            </div>
-          </div>
-        </div>
+  <div class="step-number">3</div>
+  <div class="step-body">
+    <h3>Configure the Bot</h3>
+    <p>Once the bot is in your server, use <code>/setup</code> to configure it. All subcommands are admin-only.</p>
+    <div class="code-block">
+      <span class="code-label">View current configuration</span>
+      <pre><code>/setup view</code></pre>
+    </div>
+    <div class="code-block">
+      <span class="code-label">Enable weekly server summaries</span>
+      <pre><code>/setup summary #channel</code></pre>
+    </div>
+    <div class="code-block">
+      <span class="code-label">Set the summary cron schedule</span>
+      <pre><code>/setup summary-schedule 0 10 * * 1</code></pre>
+    </div>
+    <div class="code-block">
+      <span class="code-label">Enable coffee pairing</span>
+      <pre><code>/setup coffee true</code></pre>
+    </div>
+    <div class="code-block">
+      <span class="code-label">Set the coffee pairing role</span>
+      <pre><code>/setup coffee-role coffee chat</code></pre>
+    </div>
+    <div class="code-block">
+      <span class="code-label">Set the coffee pairing schedule</span>
+      <pre><code>/setup coffee-schedule 0 10 * * 5</code></pre>
+    </div>
+    <div class="code-block">
+      <span class="code-label">Set the timezone for all scheduled tasks</span>
+      <pre><code>/setup timezone America/New_York</code></pre>
+    </div>
+  </div>
+</div>
+
+
+        <div class="step-connector"></div>
 
         <div class="step-connector"></div>
 
         <div class="step-card">
           <div class="step-number">4</div>
-          <div class="step-body">
-            <h3>Configure Your Channels</h3>
-            <p>Tell [BOT NAME] which channels to use for logs, welcome messages, and other features. You can do this through the setup wizard or manually with <code>/config</code>.</p>
-            <div class="code-block">
-              <span class="code-label">Example — set the mod-log channel</span>
-              <pre><code>/config modlog #mod-log</code></pre>
-            </div>
-            <div class="code-block">
-              <span class="code-label">Example — set the welcome channel</span>
-              <pre><code>/config welcome #welcome</code></pre>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-connector"></div>
-
-        <div class="step-card">
-          <div class="step-number">5</div>
           <div class="step-body">
             <h3>You're All Set!</h3>
             <p>That's it — [BOT NAME] is ready to use. Explore all available commands with <code>/help</code>, or check out the commands section above for a full list.</p>

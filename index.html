@@ -46,7 +46,7 @@
       <div class="hero-badges">
         <span class="badge"><i class="fas fa-shield-halved"></i> Self-Verified Bot</span>
         <span class="badge"><i class="fas fa-bolt"></i> Always Online</span>
-        <span class="badge"><i class="fas fa-server"></i> Single Server</span>
+        <span class="badge"><i class="fas fa-server"></i> Multi-Server</span>
       </div>
 
       <h1 class="hero-title">Torc Bot</h1>
@@ -61,7 +61,7 @@
         </a>
       </div>
 
-      <p class="hero-sub">No credit card required &nbsp;·&nbsp; Set up in under 2 minutes &nbsp;·&nbsp; Works on any server</p>
+      <p class="hero-sub">No credit card required &nbsp;·&nbsp; Configured via web dashboard &nbsp;·&nbsp; Works on any server</p>
     </div>
     <div class="hero-scroll-hint">
       <i class="fas fa-chevron-down"></i>
@@ -104,28 +104,28 @@
         <!-- ── Feature 1 ── -->
         <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #5865F2;">
-            <i class="fas fa-gavel"></i>
+            <i class="fas fa-file-lines"></i>
           </div>
           <h3>Server Summarization</h3>
-          <p>Summarizes recent messages across all text channels using Groq AI</p>
+          <p>Summarizes recent messages across all text channels using your configured AI provider.</p>
           <ul class="feature-list">
-            <li><i class="fas fa-check"></i> Gathers last 100 messages from all text channels</li>
-            <li><i class="fas fa-check"></i> Utilizing Groq AI, generates a summary of the conversation</li>
-            <li><i class="fas fa-check"></i> Built as a /slash command that can summarize the current specific channel summoned in, or as a CRON scheduled task to run weekly. Great for the summary of the previous week.</li>
+            <li><i class="fas fa-check"></i> Gathers the last 100 messages from all visible text channels</li>
+            <li><i class="fas fa-check"></i> Works with Groq, OpenAI, Anthropic, Ollama, or any OpenAI-compatible endpoint</li>
+            <li><i class="fas fa-check"></i> Available as a slash command or as an automated weekly summary posted to a configured channel</li>
           </ul>
         </div>
 
         <!-- ── Feature 2 ── -->
         <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #57F287;">
-            <i class="fas fa-chart-bar"></i>
+            <i class="fas fa-bell"></i>
           </div>
           <h3>Reminders</h3>
-          <p>Lets user set up reminders within your discord server and be pinged when that time comes. Using natural language set reminders.</p>
+          <p>Set personal reminders using natural language — delivered straight to your DMs.</p>
           <ul class="feature-list">
-            <li><i class="fas fa-check"></i>Simple to use</li>
-            <li><i class="fas fa-check"></i>Reminders go to users DM's so it doesn't clog up channel conversations</li>
-            <li><i class="fas fa-check"></i>Reminders are stored in JSON and can be deleted by the user at any time.</li>
+            <li><i class="fas fa-check"></i> Simple natural language input: "2 hours", "3 days"</li>
+            <li><i class="fas fa-check"></i> Reminders arrive via DM so they don't clutter channels</li>
+            <li><i class="fas fa-check"></i> List and cancel individual reminders or all at once</li>
           </ul>
         </div>
 
@@ -141,17 +141,45 @@
           </ul>
         </div> -->
 
-        <!-- ── Feature 4 ── -->
+        <!-- ── Feature 3 ── -->
         <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #ED4245;">
-            <i class="fas fa-robot"></i>
+            <i class="fas fa-language"></i>
           </div>
-          <h3>Live voice translation</h3>
-          <p>Live voice translation of Audio channels in Discord with web based captions outside of Discord utilizing Groq AI.</p>
+          <h3>Live Voice Translation</h3>
+          <p>Captures voice channel audio, transcribes with Whisper, translates via your AI provider, and streams captions to a web page in near real-time.</p>
           <ul class="feature-list">
-            <li><i class="fas fa-check"></i> Multi-language support for each individual user to choose their preferred language.</li>
-            <li><i class="fas fa-check"></i> Near live translation services for members to participate in events where they may not speak the language.</li>
-            <li><i class="fas fa-check"></i> Shows who is speaking, what was originally spoken and what it translated to in the chosen language.</li>
+            <li><i class="fas fa-check"></i> Near real-time captions accessible via a shareable web URL — no Discord required</li>
+            <li><i class="fas fa-check"></i> Shows who is speaking, the original speech, and the translated text</li>
+            <li><i class="fas fa-check"></i> Sessions auto-expire after 1 hour; supports Groq and OpenAI Whisper</li>
+          </ul>
+        </div>
+
+        <!-- ── Feature 4 ── -->
+        <div class="feature-card">
+          <div class="feature-icon" style="--icon-color: #EB459E;">
+            <i class="fas fa-mug-hot"></i>
+          </div>
+          <h3>Coffee Chat Pairing</h3>
+          <p>Randomly pairs members with a designated role and DMs them to set up one-on-one meetings — great for community building.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Configurable role, schedule, and cooldown period</li>
+            <li><i class="fas fa-check"></i> Cooldown prevents the same pair from repeating too soon</li>
+            <li><i class="fas fa-check"></i> Run manually or on an automated schedule</li>
+          </ul>
+        </div>
+
+        <!-- ── Feature 5 ── -->
+        <div class="feature-card">
+          <div class="feature-icon" style="--icon-color: #5DADE2;">
+            <i class="fas fa-sliders"></i>
+          </div>
+          <h3>Web Dashboard</h3>
+          <p>Every server admin configures their own settings through a private browser UI — no slash commands required for setup.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Access via /setup dashboard — generates a private, time-limited link</li>
+            <li><i class="fas fa-check"></i> Set AI provider and API keys, summary channel, schedules, and more</li>
+            <li><i class="fas fa-check"></i> Each server's config is fully isolated — no data is shared across servers</li>
           </ul>
         </div>
 
@@ -202,7 +230,7 @@
         <button class="cmd-filter-btn" data-category="moderation">Moderation</button>
         <button class="cmd-filter-btn" data-category="utility">Utility</button>
         <!-- <button class="cmd-filter-btn" data-category="fun">Fun</button> -->
-        <button class="cmd-filter-btn" data-category="config">Config (N/A)</button>
+        <button class="cmd-filter-btn" data-category="config">Config</button>
       </div>
 
       <div class="commands-grid" id="commandsGrid">
@@ -235,13 +263,13 @@
           <div class="cmd-usage"><span>Usage:</span> <code>/coffee-list</code></div>
         </div>
 
-        <div class="cmd-card" data-category="utilty">
+        <div class="cmd-card" data-category="utility">
           <div class="cmd-header">
-            <code class="cmd-name">/server</code>
+            <code class="cmd-name">/server-summary</code>
             <span class="cmd-tag tag-util">Utility</span>
           </div>
-          <p class="cmd-desc">(Admin Only) (CRON) Gathers recent 100 messages from all visible text channels and posts an AI-generated summary to the configured `TARGET_CHANNEL_ID`</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/server</code></div>
+          <p class="cmd-desc">(Admin only) Gathers recent messages from all visible text channels and posts an AI-generated summary to the configured summary channel.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/server-summary</code></div>
         </div>
 
         <div class="cmd-card" data-category="utility">
@@ -256,10 +284,10 @@
         <!-- Utility -->
         <div class="cmd-card" data-category="utility">
           <div class="cmd-header">
-            <code class="cmd-name">/coffe-pair</code>
+            <code class="cmd-name">/coffee-pair</code>
             <span class="cmd-tag tag-util">Utility</span>
           </div>
-          <p class="cmd-desc">(Admin Only) (CRON: Scheduled every other Monday morning) Randomly pairs members who have the `COFFEE_ROLE_NAME` and DMs each person their partner's name. Respects the cooldown period so the same pair isn't repeated too soon.</p>
+          <p class="cmd-desc">(Admin only) Randomly pairs members who have the coffee chat role and DMs each person their partner's name. Respects the cooldown period so the same pair isn't repeated too soon.</p>
           <div class="cmd-usage"><span>Usage:</span> <code>/coffee-pair</code></div>
         </div>
 
@@ -299,33 +327,42 @@
   <div class="cmd-usage"><span>Usage:</span> <code>/translate [start] Join a voice channel and begin live captioning, or [stop] End the active translation session.</code></div>
 </div>
 
-        <!-- Fun -->
-        <div class="cmd-card" data-category="fun">
+        <!-- Utility -->
+        <div class="cmd-card" data-category="utility">
           <div class="cmd-header">
             <code class="cmd-name">/events</code>
-            <span class="cmd-tag tag-fun">Fun</span>
+            <span class="cmd-tag tag-util">Utility</span>
           </div>
-          <p class="cmd-desc">Fetches and DMs you the next 7 days of scheduled Luma server events (up to 10)</p>
+          <p class="cmd-desc">Fetches and DMs you the next 7 days of scheduled Discord server events (up to 10).</p>
           <div class="cmd-usage"><span>Usage:</span> <code>/events</code></div>
         </div>
 
         <!-- Config -->
         <div class="cmd-card" data-category="config">
-  <div class="cmd-header">
-    <code class="cmd-name">/setup</code>
-    <span class="cmd-tag tag-cfg">Config</span>
-  </div>
-  <p class="cmd-desc">(Admin only) Configure bot settings for this server. Manage automated weekly summaries, set the channel they post to, and toggle coffee pairing on or off.</p>
-  <div class="cmd-usage"><span>Usage:</span> <code>/setup [view] See current config, [summary #channel] Enable weekly summaries in a channel, [summary-disable] Turn off summaries, or [coffee true|false] Toggle coffee pairing.</code></div>
-</div>
+          <div class="cmd-header">
+            <code class="cmd-name">/setup dashboard</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Generates a private, time-limited link to the web configuration dashboard. The link expires in 24 hours. From the dashboard you can configure everything — summary channel, schedules, coffee pairing, AI provider and API keys.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup dashboard</code></div>
+        </div>
 
         <div class="cmd-card" data-category="config">
           <div class="cmd-header">
-            <code class="cmd-name">/config</code>
+            <code class="cmd-name">/setup view</code>
             <span class="cmd-tag tag-cfg">Config</span>
           </div>
-          <p class="cmd-desc">[Description. E.g. "View or update any bot setting for your server — log channel, prefix, module toggles, and more."]</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/config [setting] [value]</code></div>
+          <p class="cmd-desc">(Admin only) Shows the current configuration for your server as an embed in Discord.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup view</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup ai</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Configure the AI provider and model for summarization, translation, or transcription directly via slash command.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup ai service:[summarization|translation|transcription] provider:[groq|openai|anthropic|ollama|custom] key:[api-key] model:[model-name]</code></div>
         </div>
 
       </div>
@@ -379,40 +416,21 @@
         <div class="step-connector"></div>
 
         <div class="step-card">
-  <div class="step-number">3</div>
-  <div class="step-body">
-    <h3>Configure the Bot</h3>
-    <p>Once the bot is in your server, use <code>/setup</code> to configure it. All subcommands are admin-only.</p>
-    <div class="code-block">
-      <span class="code-label">View current configuration</span>
-      <pre><code>/setup view</code></pre>
-    </div>
-    <div class="code-block">
-      <span class="code-label">Enable weekly server summaries</span>
-      <pre><code>/setup summary #channel</code></pre>
-    </div>
-    <div class="code-block">
-      <span class="code-label">Set the summary cron schedule</span>
-      <pre><code>/setup summary-schedule 0 10 * * 1</code></pre>
-    </div>
-    <div class="code-block">
-      <span class="code-label">Enable coffee pairing</span>
-      <pre><code>/setup coffee true</code></pre>
-    </div>
-    <div class="code-block">
-      <span class="code-label">Set the coffee pairing role</span>
-      <pre><code>/setup coffee-role coffee chat</code></pre>
-    </div>
-    <div class="code-block">
-      <span class="code-label">Set the coffee pairing schedule</span>
-      <pre><code>/setup coffee-schedule 0 10 * * 5</code></pre>
-    </div>
-    <div class="code-block">
-      <span class="code-label">Set the timezone for all scheduled tasks</span>
-      <pre><code>/setup timezone America/New_York</code></pre>
-    </div>
-  </div>
-</div>
+          <div class="step-number">3</div>
+          <div class="step-body">
+            <h3>Open the Dashboard</h3>
+            <p>Run <code>/setup dashboard</code> in your server — the bot replies with a private, time-limited link to your server's configuration dashboard.</p>
+            <div class="code-block">
+              <span class="code-label">Generate your dashboard link</span>
+              <pre><code>/setup dashboard</code></pre>
+            </div>
+            <p>Open the link in your browser to configure your summary channel, coffee pairing schedule, AI provider, and API keys. All settings are saved per-server and isolated from other servers.</p>
+            <div class="code-block">
+              <span class="code-label">Check current configuration any time</span>
+              <pre><code>/setup view</code></pre>
+            </div>
+          </div>
+        </div>
 
 
         <div class="step-connector"></div>

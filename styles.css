@@ -758,6 +758,18 @@ code { font-family: 'Consolas', 'Courier New', monospace; }
   .features-grid, .commands-grid { gap: 12px; }
 }
 
+/* ── Buy Me a Coffee navbar button ──────────────────────────── */
+.bmc-nav-wrap {
+  display: flex;
+  align-items: center;
+}
+.bmc-nav-wrap #bmc-wbtn {
+  transform: scale(0.75);
+  transform-origin: center;
+  width: auto !important;
+  height: auto !important;
+}
+
 /* ── Scroll reveal animation ─────────────────────────────────── */
 .reveal {
   opacity: 0;
@@ -767,4 +779,9 @@ code { font-family: 'Consolas', 'Courier New', monospace; }
 .reveal.visible {
   opacity: 1;
   transform: none;
+}
+
+.bmc-btn-container .bmc-btn {
+  min-width: 50px !important;
+  background-color: transparent !important;
 }

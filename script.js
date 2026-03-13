@@ -109,6 +109,8 @@ const revealTargets = [
   ...document.querySelectorAll('.cmd-card'),
   ...document.querySelectorAll('.step-card'),
   ...document.querySelectorAll('.stat'),
+  ...document.querySelectorAll('.roadmap-card'),
+  ...document.querySelectorAll('.feedback-bar'),
 ];
 revealTargets.forEach((el, i) => {
   el.classList.add('reveal');

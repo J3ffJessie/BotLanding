@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Torc Bot — Future Features</title>
+  <meta name="description" content="See what's coming next for Torc Bot." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Future Features page-specific styles ── */
+    .ff-hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      background: var(--bg-darkest);
+      position: relative;
+      overflow: hidden;
+    }
+    .ff-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(88,101,242,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .ff-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .ff-hero-inner .section-tag { font-size: 0.85rem; }
+    .ff-hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      background: linear-gradient(135deg, #fff 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .ff-hero-sub {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    /* Status badges on cards */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .status-planned   { background: rgba(88,101,242,0.15);  color: var(--blurple); }
+    .status-progress  { background: rgba(254,231,92,0.15);  color: var(--yellow);  }
+    .status-soon      { background: rgba(87,242,135,0.15);  color: var(--green);   }
+
+    /* Roadmap grid */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .roadmap-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color 0.2s, transform 0.2s var(--ease), box-shadow 0.2s;
+    }
+    .roadmap-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+    }
+
+    .roadmap-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .roadmap-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .roadmap-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    /* Feedback callout */
+    .feedback-bar {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 56px;
+    }
+    .feedback-bar-text h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .feedback-bar-text p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    @media (max-width: 600px) {
+      .feedback-bar { flex-direction: column; align-items: flex-start; padding: 24px; }
+      .roadmap-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ──────────────────────── NAVBAR ──────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/TorcBot Logo.png" alt="Torc Bot Avatar" class="nav-avatar" />
+        <span class="nav-name">Torc Bot</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#commands">Commands</a>
+        <a href="index.html#setup">Setup</a>
+        <a href="future-features.html" style="color: var(--blurple);">Future Features</a>
+        <a href="https://discord.com/api/oauth2/authorize?client_id=1367647146970583141&permissions=36785152&scope=bot%20applications.commands" class="btn btn-primary" target="_blank" rel="noopener">
+          <i class="fab fa-discord"></i> Add to Server
+        </a>
+        <div class="bmc-nav-wrap">
+          <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="JeffJessie" data-color="#181616" data-emoji="☕" data-font="Lato" data-text="" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ──────────────────────── PAGE HERO ──────────────────────── -->
+  <div class="ff-hero">
+    <div class="ff-hero-inner">
+      <span class="section-tag">Roadmap</span>
+      <h1 class="ff-hero-title">What's coming to Torc Bot</h1>
+      <p class="ff-hero-sub">A look at features currently in progress and planned for future releases. Have an idea? Let us know.</p>
+    </div>
+  </div>
+
+  <!-- ──────────────────────── ROADMAP ──────────────────────── -->
+  <section class="section">
+    <div class="container">
+
+      <div class="roadmap-grid">
+
+        <!-- Card 1 -->
+        <div class="roadmap-card reveal">
+          <div class="roadmap-card-header">
+            <div class="feature-icon" style="--icon-color: #FEE75C;">
+              <i class="fas fa-calendar-days"></i>
+            </div>
+            <span class="status-badge status-planned">Planned</span>
+          </div>
+          <h3>AI Powered Voice Mock Interviews</h3>
+          <p>Private Individual Voice Channel for users to practice Interviews with an AI Interviewer providing the Job Description for review and the AI provides questions relevant to the job description. The AI will provide realistic feedback to the interviewee to work on.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-clock"></i> Accept and Parse Job Descriptions for relevant information to clue in on questions to ask</li>
+            <li><i class="fas fa-clock"></i> Private 1:1 Interview voice channel</li>
+            <li><i class="fas fa-clock"></i>Feedback provided based on answers given and advice to work on for the real interview</li>
+          </ul>
+        </div>
+
+
+
+      </div>
+
+      <!-- Feedback callout -->
+      <div class="feedback-bar reveal">
+        <div class="feedback-bar-text">
+          <h3>Have a feature idea?</h3>
+          <p>Open a discussion or issue on GitHub. Community requests directly shape the roadmap.</p>
+        </div>
+        <a href="https://github.com/J3ffJessie/discordSummarizer" class="btn btn-primary" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> Submit an Idea
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────────────────────── FOOTER ──────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/bot-avatar.svg" alt="Torc Bot" class="footer-avatar" />
+        <span>Torc Bot</span>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#commands">Commands</a>
+        <a href="index.html#setup">Setup</a>
+        <a href="future-features.html">Future Features</a>
+        <a href="https://discord.com/api/oauth2/authorize?client_id=1367647146970583141&permissions=36785152&scope=bot%20applications.commands" target="_blank" rel="noopener">Invite</a>
+      </nav>
+      <p class="footer-copy">&copy; <span id="footerYear"></span> Torc Bot. Not affiliated with Discord, Inc.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

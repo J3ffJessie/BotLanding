@@ -136,6 +136,18 @@
       font-size: 0.9rem;
       color: var(--text-secondary);
     }
+    .roadmap-loading,
+    .roadmap-empty,
+    .roadmap-error {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .roadmap-loading i { margin-right: 8px; color: var(--blurple); }
+    .roadmap-error { color: #ED4245; }
+
     @media (max-width: 600px) {
       .feedback-bar { flex-direction: column; align-items: flex-start; padding: 24px; }
       .roadmap-grid { grid-template-columns: 1fr; }
@@ -182,43 +194,10 @@
   <section class="section">
     <div class="container">
 
-      <div class="roadmap-grid">
-
-        <!-- Card 1 -->
-        <div class="roadmap-card reveal">
-          <div class="roadmap-card-header">
-            <div class="feature-icon" style="--icon-color: #FEE75C;">
-              <i class="fas fa-calendar-days"></i>
-            </div>
-            <span class="status-badge status-planned">Planned</span>
-          </div>
-          <h3>AI Powered Voice Mock Interviews</h3>
-          <p>Private Individual Voice Channel for users to practice Interviews with an AI Interviewer providing the Job Description for review and the AI provides questions relevant to the job description. The AI will provide realistic feedback to the interviewee to work on.</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-clock"></i> Accept and Parse Job Descriptions for relevant information to clue in on questions to ask</li>
-            <li><i class="fas fa-clock"></i> Private 1:1 Interview voice channel</li>
-            <li><i class="fas fa-clock"></i>Feedback provided based on answers given and advice to work on for the real interview</li>
-          </ul>
+      <div class="roadmap-grid" id="roadmapGrid">
+        <div class="roadmap-loading" id="roadmapLoading">
+          <i class="fas fa-spinner fa-spin"></i> Loading roadmap...
         </div>
-        <!--  Card 2 -->
-         <div class="roadmap-card reveal">
-          <div class="roadmap-card-header">
-            <div class="feature-icon" style="--icon-color: #FEE75C;">
-              <i class="fas fa-calendar-days"></i>
-            </div>
-            <span class="status-badge status-planned">Planned</span>
-          </div>
-          <h3>Automated Lofi Playlist</h3>
-          <p>Automated daily Lofi playlist in voice chat. Bot auto joins a determined voice channel at a given time and starts a lofi playlist for members of the community.</p>
-          <ul class="feature-list">
-            <li><i class="fas fa-clock"></i> Automated joining and starting the lofi playlist in a voice channel determined by admin</li>
-            <li><i class="fas fa-clock"></i> Playlist configured by admin</li>
-            <li><i class="fas fa-clock"></i>Automated end of lofi channel after 3 hours</li>
-          </ul>
-        </div>
-
-
-
       </div>
 
       <!-- Feedback callout -->
@@ -227,7 +206,7 @@
           <h3>Have a feature idea?</h3>
           <p>Open a discussion or issue on GitHub. Community requests directly shape the roadmap.</p>
         </div>
-        <a href="https://github.com/J3ffJessie/discordSummarizer" class="btn btn-primary" target="_blank" rel="noopener">
+        <a href="https://github.com/J3ffJessie/discordSummarizer/issues" class="btn btn-primary" target="_blank" rel="noopener">
           <i class="fab fa-github"></i> Submit an Idea
         </a>
       </div>
@@ -254,5 +233,76 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    (async function loadRoadmap() {
+      const grid    = document.getElementById('roadmapGrid');
+      const loading = document.getElementById('roadmapLoading');
+
+      const STATUS_MAP = {
+        'status: planned':     { cls: 'status-planned',  label: 'Planned' },
+        'status: in progress': { cls: 'status-progress', label: 'In Progress' },
+        'status: coming soon': { cls: 'status-soon',     label: 'Coming Soon' },
+      };
+
+      function getStatus(labels) {
+        for (const l of labels) {
+          const key = l.name.toLowerCase();
+          if (STATUS_MAP[key]) return STATUS_MAP[key];
+        }
+        return { cls: 'status-planned', label: 'Planned' };
+      }
+
+      function buildCard(issue) {
+        const status = getStatus(issue.labels);
+        const desc   = (issue.body || 'No description provided.')
+          .replace(/#{1,6}\s?/g, '')   // strip markdown headings
+          .replace(/\*\*/g, '')        // strip bold
+          .split('\n').filter(l => l.trim()).slice(0, 4).join(' ');
+
+        return `
+          <div class="roadmap-card reveal">
+            <div class="roadmap-card-header">
+              <div class="feature-icon" style="--icon-color: #5865F2;">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <span class="status-badge ${status.cls}">${status.label}</span>
+            </div>
+            <h3>${issue.title.replace('[Feature]: ', '').trim()}</h3>
+            <p>${desc}</p>
+            <a href="${issue.html_url}" target="_blank" rel="noopener"
+               style="font-size:0.8rem; color:var(--blurple); margin-top:auto;">
+              View on GitHub <i class="fas fa-arrow-up-right-from-square" style="font-size:0.7rem;"></i>
+            </a>
+          </div>`;
+      }
+
+      try {
+        const res = await fetch(
+          'https://api.github.com/repos/J3ffJessie/discordSummarizer/issues?labels=roadmap&state=open&per_page=50',
+          { headers: { Accept: 'application/vnd.github+json' } }
+        );
+
+        if (!res.ok) throw new Error(`GitHub API returned ${res.status}`);
+
+        const issues = await res.json();
+        loading.remove();
+
+        if (!issues.length) {
+          grid.innerHTML = '<p class="roadmap-empty">No roadmap items yet. Check back soon.</p>';
+          return;
+        }
+
+        grid.innerHTML = issues.map(buildCard).join('');
+
+        // re-run scroll reveal on injected cards
+        if (typeof initReveal === 'function') initReveal();
+
+      } catch (err) {
+        loading.remove();
+        grid.innerHTML = `<p class="roadmap-error"><i class="fas fa-circle-exclamation"></i> Could not load roadmap. <a href="https://github.com/J3ffJessie/discordSummarizer/issues" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">View on GitHub</a></p>`;
+        console.error('Roadmap fetch failed:', err);
+      }
+    })();
+  </script>
 </body>
 </html>

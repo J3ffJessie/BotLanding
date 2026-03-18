@@ -10,7 +10,7 @@
   /* Discord palette */
   --blurple:        #5865F2;
   --blurple-hover:  #4752C4;
-  --blurple-light:  rgba(88, 101, 242, 0.15);
+  --blurple-light:  #7983F5;
   --green:          #57F287;
   --yellow:         #FEE75C;
   --red:            #ED4245;
@@ -342,8 +342,8 @@ code { font-family: 'Consolas', 'Courier New', monospace; }
   display: inline-block;
   padding: 4px 14px;
   border-radius: 999px;
-  background: var(--blurple-light);
-  color: var(--blurple);
+  background: var(--border);
+  color: #fff;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -484,7 +484,7 @@ code { font-family: 'Consolas', 'Courier New', monospace; }
 .cmd-name {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--blurple);
+  color: #fff;
   background: var(--blurple-light);
   padding: 3px 10px;
   border-radius: var(--radius-sm);
@@ -498,10 +498,10 @@ code { font-family: 'Consolas', 'Courier New', monospace; }
   border-radius: 999px;
   flex-shrink: 0;
 }
-.tag-mod  { background: rgba(237, 66, 69, 0.15);  color: var(--red);    }
-.tag-util { background: rgba(93, 173, 226, 0.15); color: var(--cyan);   }
-.tag-fun  { background: rgba(254, 231, 92, 0.15); color: var(--yellow); }
-.tag-cfg  { background: rgba(88, 101, 242, 0.15); color: var(--blurple);}
+.tag-mod  { background: rgba(237, 66, 69, 0.15);  color: #fff; }
+.tag-util { background: rgba(93, 173, 226, 0.15); color: #fff; }
+.tag-fun  { background: rgba(254, 231, 92, 0.15); color: #fff; }
+.tag-cfg  { background: rgba(88, 101, 242, 0.15); color: #fff; }
 
 .cmd-desc {
   font-size: 0.875rem;

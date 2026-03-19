@@ -432,8 +432,106 @@
 
         <div class="step-connector"></div>
 
+        <!-- ── Step 3: Get Your API Key ── -->
         <div class="step-card">
           <div class="step-number">3</div>
+          <div class="step-body">
+            <h3>Get Your API Key</h3>
+            <p>Torc Bot uses an AI provider for summarization and translation. Pick your preferred provider below and follow the steps to obtain your API key — you'll paste it into the dashboard in the next step.</p>
+            <p>These providers are offered as they support Whisper STT model. In testing other options Deepgram and AssemblyAI were not as quick with providing translation so the choice was made to stay with Whisper. This may change in the future with advancements on those models.</p>
+
+            <div class="api-tabs">
+              <div class="api-tab-btns" role="tablist">
+                <button class="api-tab-btn active" data-tab="groq" role="tab">Groq</button>
+                <button class="api-tab-btn" data-tab="anthropic" role="tab">Anthropic</button>
+                <button class="api-tab-btn" data-tab="openai" role="tab">OpenAI</button>
+                <button class="api-tab-btn" data-tab="ollama" role="tab">Ollama</button>
+                <button class="api-tab-btn" data-tab="custom" role="tab">Custom</button>
+              </div>
+
+              <div class="api-tab-panels">
+
+                <!-- Groq -->
+                <div class="api-tab-panel active" data-panel="groq">
+                  <p class="api-provider-note"><i class="fas fa-bolt"></i> <strong>Groq</strong> — Fast inference with a generous free tier. Recommended for most users.</p>
+                  <ol class="api-steps">
+                    <li>Go to <a href="https://console.groq.com" target="_blank" rel="noopener">console.groq.com</a> and sign in or create a free account.</li>
+                    <li>In the left sidebar, click <strong>API Keys</strong>.</li>
+                    <li>Click <strong>Create API Key</strong>, give it a name, and copy the generated key.</li>
+                    <li>Paste it into the <strong>API Key</strong> field in the Torc Bot dashboard under AI provider settings.</li>
+                  </ol>
+                  <p class="api-model-note">Recommended model: <code>llama-3.3-70b-versatile</code></p>
+                </div>
+
+                <!-- Anthropic -->
+                <div class="api-tab-panel" data-panel="anthropic">
+                  <div class="api-stt-warning warn-hard">
+                    <i class="fas fa-circle-xmark"></i>
+                    <span><strong>Live voice translation is not available with this provider.</strong> Anthropic does not offer a speech-to-text model. Summarization and other text features will work normally, but the <code>/translate</code> command requires a Groq or OpenAI API key configured separately.</span>
+                  </div>
+                  <p class="api-provider-note"><i class="fas fa-robot"></i> <strong>Anthropic (Claude)</strong> — High-quality summaries powered by Claude models.</p>
+                  <ol class="api-steps">
+                    <li>Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a> and sign in or create an account.</li>
+                    <li>In the left menu, click <strong>API Keys</strong>.</li>
+                    <li>Click <strong>Create Key</strong>, give it a name, and copy the generated key.</li>
+                    <li>Paste it into the <strong>API Key</strong> field in the Torc Bot dashboard under AI provider settings.</li>
+                  </ol>
+                  <p class="api-model-note">Recommended model: <code>claude-3-5-haiku-20241022</code></p>
+                </div>
+
+                <!-- OpenAI -->
+                <div class="api-tab-panel" data-panel="openai">
+                  <p class="api-provider-note"><i class="fas fa-brain"></i> <strong>OpenAI</strong> — GPT models for summarization and Whisper for voice transcription.</p>
+                  <ol class="api-steps">
+                    <li>Go to <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a> and sign in or create an account.</li>
+                    <li>Click your profile icon in the top-right, then select <strong>API Keys</strong>.</li>
+                    <li>Click <strong>Create new secret key</strong>, name it, and copy the key before closing — it will not be shown again.</li>
+                    <li>Paste it into the <strong>API Key</strong> field in the Torc Bot dashboard under AI provider settings.</li>
+                  </ol>
+                  <p class="api-model-note">Recommended model: <code>gpt-4o-mini</code></p>
+                </div>
+
+                <!-- Ollama -->
+                <div class="api-tab-panel" data-panel="ollama">
+                  <div class="api-stt-warning warn-soft">
+                    <i class="fas fa-triangle-exclamation"></i>
+                    <span><strong>Live voice translation may not work with this provider.</strong> Whisper STT support depends on whether your local Ollama setup includes a compatible Whisper model. If it does not, the <code>/translate</code> command will fail — use Groq or OpenAI for reliable transcription.</span>
+                  </div>
+                  <p class="api-provider-note"><i class="fas fa-server"></i> <strong>Ollama</strong> — Run models locally. No API key required — your Ollama instance just needs to be reachable by the bot.</p>
+                  <ol class="api-steps">
+                    <li>Install Ollama from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a> and pull a model — e.g. <code>ollama pull llama3</code>.</li>
+                    <li>Start the Ollama server; it listens on <code>http://localhost:11434</code> by default.</li>
+                    <li>In the Torc Bot dashboard, set the provider to <strong>Ollama</strong>, leave the API Key field blank, and enter your Ollama base URL.</li>
+                    <li>Set the model name exactly as you pulled it (e.g. <code>llama3</code>).</li>
+                  </ol>
+                  <p class="api-model-note">No API key needed — just a reachable Ollama endpoint.</p>
+                </div>
+
+                <!-- Custom -->
+                <div class="api-tab-panel" data-panel="custom">
+                  <div class="api-stt-warning warn-soft">
+                    <i class="fas fa-triangle-exclamation"></i>
+                    <span><strong>Live voice translation may not work with this provider.</strong> Whisper STT requires the endpoint to expose a <code>/v1/audio/transcriptions</code> route compatible with the OpenAI Whisper API. Many custom endpoints do not. Check your provider's documentation to confirm — if unsupported, use Groq or OpenAI for transcription.</span>
+                  </div>
+                  <p class="api-provider-note"><i class="fas fa-plug"></i> <strong>Custom / OpenAI-compatible</strong> — Any endpoint that speaks the OpenAI API format (LM Studio, Together AI, etc.).</p>
+                  <ol class="api-steps">
+                    <li>Obtain your API key from your provider's dashboard.</li>
+                    <li>Note the base URL for their OpenAI-compatible endpoint (e.g. <code>https://api.together.xyz/v1</code>).</li>
+                    <li>In the Torc Bot dashboard, set the provider to <strong>Custom</strong>, then enter your API key and base URL.</li>
+                    <li>Set the model name to whatever your provider exposes — check their documentation for the exact identifier.</li>
+                  </ol>
+                  <p class="api-model-note">Any OpenAI-compatible API endpoint is supported.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-connector"></div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
           <div class="step-body">
             <h3>Open the Dashboard</h3>
             <p>Run <code>/setup dashboard</code> in your server — the bot replies with a private, time-limited link to your server's configuration dashboard.</p>
@@ -452,10 +550,8 @@
 
         <div class="step-connector"></div>
 
-        <div class="step-connector"></div>
-
         <div class="step-card">
-          <div class="step-number">4</div>
+          <div class="step-number">5</div>
           <div class="step-body">
             <h3>You're All Set!</h3>
             <p>That's it — Torc Bot is ready to use. Explore all available commands with <code>/help</code>, or check out the commands section above for a full list.</p>

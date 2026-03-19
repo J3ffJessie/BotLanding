@@ -93,6 +93,22 @@ filterBtns.forEach(btn => {
   });
 });
 
+// ── API provider tabs ────────────────────────────────────────
+document.querySelectorAll('.api-tabs').forEach(tabGroup => {
+  const btns   = tabGroup.querySelectorAll('.api-tab-btn');
+  const panels = tabGroup.querySelectorAll('.api-tab-panel');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      tabGroup.querySelector(`.api-tab-panel[data-panel="${btn.dataset.tab}"]`)
+              .classList.add('active');
+    });
+  });
+});
+
 // ── Scroll reveal ────────────────────────────────────────────
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {

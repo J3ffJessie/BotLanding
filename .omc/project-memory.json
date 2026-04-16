@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1776357966030,
+  "projectRoot": "c:\\Users\\JeffJ\\Projects\\BotLanding",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "assets"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 2,
+      "lastAccessed": 1776357965953,
+      "keyFiles": [
+        "bot-avatar.svg",
+        "TorcBot Logo.png"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "index.html",
+      "accessCount": 5,
+      "lastAccessed": 1776358456815,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 1,
+      "lastAccessed": 1776358337526,
+      "type": "directory"
+    }
+  ],
+  "userDirectives": []
+}

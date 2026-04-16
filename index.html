@@ -85,7 +85,7 @@
         <span class="stat-label">Users Reached</span>
       </div>
       <div class="stat">
-        <span class="stat-number" data-target="13">0</span><span class="stat-number">+</span>
+        <span class="stat-number" data-target="23">0</span><span class="stat-number">+</span>
         <span class="stat-label">Commands</span>
       </div>
       <div class="stat">
@@ -198,6 +198,7 @@
             <li><i class="fas fa-check"></i> Access via /setup dashboard — generates a private, time-limited link</li>
             <li><i class="fas fa-check"></i> Set AI provider and API keys, summary channel, schedules, and more</li>
             <li><i class="fas fa-check"></i> Each server's config is fully isolated — no data is shared across servers</li>
+            <li><i class="fas fa-check"></i> Built-in analytics: member growth, message engagement, channel activity, activity patterns by day and hour, server composition by role, and exportable Markdown reports — all filterable by date range</li>
           </ul>
         </div>
 
@@ -302,11 +303,11 @@
         <!-- Utility -->
         <div class="cmd-card" data-category="utility">
           <div class="cmd-header">
-            <code class="cmd-name">/coffee-pair</code>
+            <code class="cmd-name">/paircoffee</code>
             <span class="cmd-tag tag-util">Utility</span>
           </div>
-          <p class="cmd-desc">(Admin only) Randomly pairs members who have the coffee chat role and DMs each person their partner's name. Respects the cooldown period so the same pair isn't repeated too soon.</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/coffee-pair</code></div>
+          <p class="cmd-desc">(Admin only) Manually triggers a coffee pairing run immediately. Posts pairings to the configured announcement channel (or falls back to DMs if no channel is set). Respects the cooldown period so the same pair isn't repeated too soon.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/paircoffee</code></div>
         </div>
 
         <div class="cmd-card" data-category="utility">
@@ -381,6 +382,96 @@
           </div>
           <p class="cmd-desc">(Admin only) Configure the AI provider and model for summarization, translation, or transcription directly via slash command.</p>
           <div class="cmd-usage"><span>Usage:</span> <code>/setup ai service:[summarization|translation|transcription] provider:[groq|openai|anthropic|ollama|custom] key:[api-key] model:[model-name]</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup summary</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Set the channel where automated server summaries are posted and enable the feature.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup summary</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup coffee-channel</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Set the channel where coffee pairings are announced. When set, a single message listing all pairs is posted here instead of DMing each participant.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup coffee-channel</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup coffee</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Enable or disable automated coffee pairing for your server.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup coffee</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup coffee-role</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Set the role name used to identify members eligible for coffee pairing. Defaults to "coffee chat".</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup coffee-role</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup coffee-schedule</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Set the cron schedule for automated coffee pairing (e.g. <code>0 10 * * 5</code> for Fridays at 10am).</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup coffee-schedule</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup coffee-biweekly</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Toggle whether coffee pairing runs every week or every other week.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup coffee-biweekly</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup coffee-cooldown</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Set how many days must pass before the same pair can be matched again. Defaults to 30 days.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup coffee-cooldown</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup timezone</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Set the IANA timezone used for all scheduled tasks (e.g. <code>America/New_York</code>).</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup timezone</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup admin-add</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Discord Administrator only) Grant bot-admin privileges to a user, allowing them to run all admin commands without needing Discord Administrator permission.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup admin-add</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup admin-remove</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Discord Administrator only) Revoke bot-admin privileges from a user.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup admin-remove</code></div>
         </div>
 
       </div>

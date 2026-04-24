@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh api *)"
+      "Bash(gh api *)",
+      "Bash(git -C \"c:/Users/JeffJ/Projects/BotLanding\" status)"
     ]
   }
 }

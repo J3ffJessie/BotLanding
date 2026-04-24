@@ -134,6 +134,14 @@ revealTargets.forEach((el, i) => {
   revealObserver.observe(el);
 });
 
+// Expose for dynamically injected cards (e.g. roadmap fetch)
+window.initReveal = function () {
+  document.querySelectorAll('.reveal:not(.visible)').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 60}ms`;
+    revealObserver.observe(el);
+  });
+};
+
 // ── Footer year ──────────────────────────────────────────────
 const yearEl = document.getElementById('footerYear');
 if (yearEl) yearEl.textContent = new Date().getFullYear();

@@ -239,6 +239,7 @@
       const loading = document.getElementById('roadmapLoading');
 
       const STATUS_MAP = {
+        'status:planned':      { cls: 'status-planned',  label: 'Planned' },
         'status: planned':     { cls: 'status-planned',  label: 'Planned' },
         'status: in progress': { cls: 'status-progress', label: 'In Progress' },
         'status: coming soon': { cls: 'status-soon',     label: 'Coming Soon' },
@@ -267,7 +268,7 @@
               </div>
               <span class="status-badge ${status.cls}">${status.label}</span>
             </div>
-            <h3>${issue.title.replace('[Feature]: ', '').trim()}</h3>
+            <h3>${issue.title.replace(/^\[Feature\]:\s*/i, '').trim() || 'Untitled Feature'}</h3>
             <p>${desc}</p>
             <a href="${issue.html_url}" target="_blank" rel="noopener"
                style="font-size:0.8rem; color:var(--blurple); margin-top:auto;">

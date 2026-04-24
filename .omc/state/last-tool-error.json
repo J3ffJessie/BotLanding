@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"gh api \\\"repos/J3ffJessie/discordSummarizer/issues\\\" --field labels=roadmap --field state=open 2>&1\",\"description\":\"Re-check issues with roadmap label using field params\"}",
+  "error": "Exit code 1\n{\"message\":\"Invalid request.\\n\\nFor 'properties/labels', \\\"roadmap\\\" is not an array.\\n\\\"title\\\" wasn't supplied.\",\"documentation_url\":\"https://docs.github.com/rest/issues/issues#create-an-issue\",\"status\":\"422\"}gh: Invalid request.\n\nFor 'properties/labels', \"roadmap\" is not an array.\n\"title\" wasn't supplied. (HTTP 422)",
+  "timestamp": "2026-04-24T18:54:56.580Z",
+  "retry_count": 1
+}

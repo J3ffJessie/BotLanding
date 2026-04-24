@@ -255,10 +255,11 @@
 
       function buildCard(issue) {
         const status = getStatus(issue.labels);
-        const desc   = (issue.body || 'No description provided.')
-          .replace(/#{1,6}\s?/g, '')   // strip markdown headings
-          .replace(/\*\*/g, '')        // strip bold
-          .split('\n').filter(l => l.trim()).slice(0, 4).join(' ');
+        const bodyText = issue.body || '';
+        const descMatch = bodyText.match(/###\s*Description\s*\n+([\s\S]+?)(?=\n###|$)/i);
+        const desc = (descMatch ? descMatch[1] : bodyText)
+          .replace(/\*\*/g, '')
+          .split('\n').filter(l => l.trim()).slice(0, 4).join(' ') || 'No description provided.';
 
         return `
           <div class="roadmap-card reveal">

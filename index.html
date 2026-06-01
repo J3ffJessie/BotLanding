@@ -89,7 +89,7 @@
         <span class="stat-label">Users Reached</span>
       </div>
       <div class="stat">
-        <span class="stat-number" data-target="23">0</span><span class="stat-number">+</span>
+        <span class="stat-number" data-target="28">0</span><span class="stat-number">+</span>
         <span class="stat-label">Commands</span>
       </div>
       <div class="stat">
@@ -485,6 +485,33 @@
           </div>
           <p class="cmd-desc">(Discord Administrator only) Revoke bot-admin privileges from a user.</p>
           <div class="cmd-usage"><span>Usage:</span> <code>/setup admin-remove</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/sticky set</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Sets a sticky message for the current channel. The bot automatically deletes its previous sticky post and reposts it after every new message so it always stays visible at the bottom.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/sticky set content:[message text — max 2000 characters]</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/sticky remove</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Removes the sticky message from the current channel and deletes the bot's last sticky post.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/sticky remove</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/sticky view</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Shows the current sticky message content for this channel as an ephemeral embed — only visible to you.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/sticky view</code></div>
         </div>
 
       </div>

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1780349177204,
+  "lastScanned": 1785449155768,
   "projectRoot": "c:\\Users\\JeffJ\\Projects\\BotLanding",
   "techStack": {
     "languages": [],
@@ -35,7 +35,7 @@
       "path": "assets",
       "purpose": "Static assets",
       "fileCount": 2,
-      "lastAccessed": 1780349177136,
+      "lastAccessed": 1785449155733,
       "keyFiles": [
         "bot-avatar.svg",
         "TorcBot Logo.png"
@@ -44,21 +44,21 @@
   },
   "hotPaths": [
     {
+      "path": "index.html",
+      "accessCount": 19,
+      "lastAccessed": 1785449249923,
+      "type": "directory"
+    },
+    {
       "path": "styles.css",
       "accessCount": 17,
       "lastAccessed": 1777057823953,
       "type": "directory"
     },
     {
-      "path": "index.html",
-      "accessCount": 15,
-      "lastAccessed": 1780350753417,
-      "type": "directory"
-    },
-    {
       "path": "future-features.html",
-      "accessCount": 5,
-      "lastAccessed": 1777058344680,
+      "accessCount": 6,
+      "lastAccessed": 1780598994200,
       "type": "file"
     },
     {
@@ -66,6 +66,12 @@
       "accessCount": 2,
       "lastAccessed": 1777057841930,
       "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 2,
+      "lastAccessed": 1780599135625,
+      "type": "directory"
     }
   ],
   "userDirectives": []

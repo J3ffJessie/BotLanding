@@ -347,7 +347,7 @@
             <span class="cmd-tag tag-util">Utility</span>
           </div>
           <p class="cmd-desc">Start or End giveaways all within the discord. Provides a giveaway host URL to allow entering of prize information to display above the wheel with the ability to spin the wheel to select winners. Provides a viewer URL if they want to watch it spin outside of the streaming in discord. Enter giveaway live in the discord, captures username and auto populates the wheel with the entrant names. Selected winner receives a DM notifying them that they won and to reach out to the giveaway host for further details. Winners are also tracked on the server dashboard accessible by admins that show who won, what they won and when they won it.</p>
-          <div class="cmd-usage"><span>Usage:</span> <code>/listreminders</code></div>
+          <div class="cmd-usage"><span>Usage:</span> <code>/giveaway</code></div>
         </div>
 
         <div class="cmd-card" data-category="utility">
@@ -359,15 +359,41 @@
   <div class="cmd-usage"><span>Usage:</span> <code>/translate [start] Join a voice channel and begin live captioning, or [stop] End the active translation session.</code></div>
 </div>
 
-        <!-- Utility -->
-        <!-- <div class="cmd-card" data-category="utility">
+        <div class="cmd-card" data-category="utility">
+          <div class="cmd-header">
+            <code class="cmd-name">/interview</code>
+            <span class="cmd-tag tag-util">Utility</span>
+          </div>
+          <p class="cmd-desc">Start or stop a private, AI-powered voice interview for practice. The bot creates a private voice channel, asks up to 8 spoken questions based on a job description (with follow-ups adapted to your answers), then DMs a scored summary plus a full transcript.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/interview [start] Begin setup — choose a style and language, then provide a job description, or [stop] End your current interview early.</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="utility">
+          <div class="cmd-header">
+            <code class="cmd-name">/profile edit</code>
+            <span class="cmd-tag tag-util">Utility</span>
+          </div>
+          <p class="cmd-desc">Opens a modal to set your bio, role/title, skills, timezone, and networking preference. Setting networking to yes opts you in to the server's bi-weekly coffee chat pairings.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/profile edit</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="utility">
+          <div class="cmd-header">
+            <code class="cmd-name">/profile view</code>
+            <span class="cmd-tag tag-util">Utility</span>
+          </div>
+          <p class="cmd-desc">Displays your profile (or another member's) as an embed — showing their avatar, banner, bio, role, skills, timezone, and networking status.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/profile view [member] Optional — view another member's profile instead of your own.</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="utility">
           <div class="cmd-header">
             <code class="cmd-name">/events</code>
             <span class="cmd-tag tag-util">Utility</span>
           </div>
           <p class="cmd-desc">Fetches and DMs you the next 7 days of scheduled Discord server events (up to 10).</p>
           <div class="cmd-usage"><span>Usage:</span> <code>/events</code></div>
-        </div> -->
+        </div>
 
         <!-- Config -->
         <div class="cmd-card" data-category="config">
@@ -485,6 +511,24 @@
           </div>
           <p class="cmd-desc">(Discord Administrator only) Revoke bot-admin privileges from a user.</p>
           <div class="cmd-usage"><span>Usage:</span> <code>/setup admin-remove</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup resume-channel</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Designates a text or forum channel as the resume review channel. The bot monitors threads there and automatically reviews any resume attachment posted, replying with structured AI feedback on summary, skills, experience, education, formatting, and top improvements.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup resume-channel [channel]</code></div>
+        </div>
+
+        <div class="cmd-card" data-category="config">
+          <div class="cmd-header">
+            <code class="cmd-name">/setup resume-disable</code>
+            <span class="cmd-tag tag-cfg">Config</span>
+          </div>
+          <p class="cmd-desc">(Admin only) Turns off automated resume review for the server.</p>
+          <div class="cmd-usage"><span>Usage:</span> <code>/setup resume-disable</code></div>
         </div>
 
         <div class="cmd-card" data-category="config">
